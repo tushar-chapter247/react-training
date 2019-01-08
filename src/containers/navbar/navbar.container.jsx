@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavbarView from '../../components/navbar-view/navbar-view.component';
 
 class Navbar extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {};
   }
@@ -10,10 +10,9 @@ class Navbar extends Component {
 
 
 
-
   render() {
     return (
-      <NavbarView />
+      <NavbarView appName={this.props.appName} />
     );
   }
 

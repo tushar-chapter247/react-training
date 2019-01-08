@@ -3,10 +3,16 @@ import './app.css';
 import Navbar from '../navbar/navbar.container';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      appName: 'Burger Builder'
+    }
+  }
   render() {
     return (
       <div className="app-container">
-        <Navbar />
+        <Navbar appName={this.state.appName} />
       </div>
     );
   }
