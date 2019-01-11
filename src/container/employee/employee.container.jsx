@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SingleEmployee from '../../components/employee/employee.component';
-import request from 'request';
+import axios from 'axios';
 
 class Employee extends Component {
   state = {
@@ -19,19 +19,16 @@ class Employee extends Component {
 
   getEmployees = () => {
     let that = this;
-    request('https://jsonplaceholder.typicode.com/users', function (err, response, body) {
-      if (err) {
+    const url = 'https://jsonplaceholder.typicode.com/users';
+    axios.get(url)
+      .then(function (response) {
+        if (response.status === 200) {
+          that.setState({ employeeList: response.data }); 
+        }
+      })
+      .catch(function (err) {
         console.log('Error: ', err);
-        return;
-      }
-      if (response && response.statusCode === 200) {
-        that.setState({
-          employeeList: body
-        });
-        return;
-      }
-      return;
-    });
+      });
   };
 
 

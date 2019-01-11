@@ -4,10 +4,10 @@ import './employee.css';
 const SingleEmployee = (props) => {
   let employeeList = [];
   if (props.employeeList && props.employeeList.length) {
-    employeeList = JSON.parse(props.employeeList);
+    employeeList = props.employeeList;
   }
 
-  
+
   return (
     <>
       <div className="employee-container">
