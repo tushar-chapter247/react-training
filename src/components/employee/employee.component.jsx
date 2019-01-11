@@ -30,7 +30,7 @@ const EmployeeTable = (props) => {
                           <td align="left">{key.username}</td>
                           <td align="left">{key.email}</td>
                           <td>
-                            <button type="button" className="btn btn-info">
+                            <button type="button" className="btn btn-info" data-toggle="modal" data-target="#employeeDetailModal" onClick={() => props.getSingleEmployee(key.id)}>
                               Info
                             </button>
                             &nbsp;
