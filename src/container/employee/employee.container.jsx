@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SingleEmployee from '../../components/employee/employee.component';
+import EmployeeTable from '../../components/employee/employee.component';
 import axios from 'axios';
 
 class Employee extends Component {
@@ -23,7 +23,7 @@ class Employee extends Component {
     axios.get(url)
       .then(function (response) {
         if (response.status === 200) {
-          that.setState({ employeeList: response.data }); 
+          that.setState({ employeeList: response.data });
         }
       })
       .catch(function (err) {
@@ -38,7 +38,8 @@ class Employee extends Component {
     return (
       <div>
         <h2>Employees</h2>
-        <SingleEmployee employeeList={this.state.employeeList} />
+        <br />
+        <EmployeeTable employeeList={this.state.employeeList} />
       </div>
     );
   }
