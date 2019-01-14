@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'; // prop types can only work in class component
 
-const BurgerIngredients = (props) => {
-  let ingredients = null;
+class BurgerIngredients extends Compnent {
+  render() {
 
-  console.log('ingredients type: ', props.type);
+    let ingredients = null;
+
+    return ingredients;
+
+  }
 };
+
+
+BurgerIngredients.PropTypes = { type: PropTypes.string };
+
 
 export default BurgerIngredients;
