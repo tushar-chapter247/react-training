@@ -5,7 +5,7 @@ import './burger-ingredients.css';
 class BurgerIngredients extends Component {
   render() {
 
-    let ingredients = null;
+    let ingredient = null;
 
     switch (this.props.type) {
       case 'meat':
@@ -24,7 +24,7 @@ class BurgerIngredients extends Component {
         ingredient = null;
     }
 
-    return ingredients;
+    return ingredient;
 
   }
 };
