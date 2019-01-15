@@ -6,6 +6,12 @@ class Builder extends Component {
     super();
 
     this.state = {
+      ingredients: {
+        cheese: 0,
+        bacon: 0,
+        salad: 0,
+        meat: 0,
+      },
     };
   }
 
@@ -14,7 +20,7 @@ class Builder extends Component {
   render() {
     return (
       <>
-        <Burger />
+        <Burger ingredients={this.state.ingredients} />
       </>
     );
   }
