@@ -19,6 +19,8 @@ const BurgerControls = props => {
         <SingleControl
           key={ingredient.label}
           ingredient={ingredient.label}
+          add={() => props.add(ingredient.type)}
+          remove={() => props.remove(ingredient.type)}
         />
       ))}
     </div>

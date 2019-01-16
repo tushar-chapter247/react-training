@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types"; // prop types can only work in class component
+import propTypes from "prop-types"; // prop types can only work in class component
 import "./burger-ingredients.css";
 
 class BurgerIngredients extends Component {
@@ -27,6 +27,6 @@ class BurgerIngredients extends Component {
   }
 }
 
-BurgerIngredients.PropTypes = { type: PropTypes.string };
+BurgerIngredients.propTypes = { type: propTypes.string };
 
 export default BurgerIngredients;
