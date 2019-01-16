@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Burger from '../../components/burger/burger.component';
+import React, { Component } from "react";
+import Burger from "../../components/burger/burger.component";
 
 class Builder extends Component {
   constructor() {
@@ -10,12 +10,10 @@ class Builder extends Component {
         cheese: 0,
         bacon: 0,
         salad: 0,
-        meat: 0,
-      },
+        meat: 0
+      }
     };
   }
-
-
 
   render() {
     return (
@@ -24,7 +22,6 @@ class Builder extends Component {
       </>
     );
   }
-};
-
+}
 
 export default Builder;
