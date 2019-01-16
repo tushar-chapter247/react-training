@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Burger from "../../components/burger/burger.component";
+import BurgerControls from "../../components/burger/burger-controls/burger-controls.component";
 
 class Builder extends Component {
   constructor() {
@@ -11,7 +12,8 @@ class Builder extends Component {
         bacon: 0,
         salad: 0,
         meat: 0
-      }
+      },
+      totalPrice: 0
     };
   }
 
@@ -19,6 +21,7 @@ class Builder extends Component {
     return (
       <>
         <Burger ingredients={this.state.ingredients} />
+        <BurgerControls totalPrice={this.state.totalPrice} />
       </>
     );
   }
