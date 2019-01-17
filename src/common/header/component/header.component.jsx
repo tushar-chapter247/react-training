@@ -1,5 +1,6 @@
 import React from 'react'
 import './header.component.css';
+import { Link } from 'react-router-dom';
 
 const HeaderComponent = () => {
   return (
@@ -13,10 +14,10 @@ const HeaderComponent = () => {
         <div class="collapse navbar-collapse" id="navbarMobileToggle">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link">Calendar <span class="sr-only">(current)</span></a>
+              <Link class="nav-link" to="/calendar">Calendar</Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link">Range Calendar</a>
+              <Link class="nav-link" to="/range-calender">Range Calendar</Link>
             </li>
             <li class="nav-item">
               <a class="nav-link">Table</a>
