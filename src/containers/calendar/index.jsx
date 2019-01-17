@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import FullCalendar from 'fullcalendar-reactwrapper';
+import './calendar.css';
+import CalendarComponent from './component/calendar.component';
 
 class Calendar extends Component {
   render() {
     return (
-      <>
-        <h2>this is calendar page</h2>
-      </>
+      <CalendarComponent />
     )
   }
 };
