@@ -1,22 +1,39 @@
 import React from 'react'
 import './header.component.css';
 
-const HeaderComponent = (props) => {
+const HeaderComponent = () => {
   return (
     <>
-      <nav className="navbar navbar-dark bg-dark sticky-top">
-        <a className="navbar-brand" href="//localhost:3000">
-          <img src="//getbootstrap.com/docs/4.2/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt="" />
-          &nbsp; Report Section
-      </a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMobileToggle" aria-controls="navbarMobileToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <ul className="navbar-nav pull-right">
-          <li>
-            <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Login">
-              <span>Login</span>
-            </button>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarMobileToggle">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link">Calendar <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Range Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Table</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown Menu
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item">Action</a>
+                <a class="dropdown-item">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </nav>
     </>
   );
