@@ -20,17 +20,17 @@ const HeaderComponent = () => {
               <Link className="nav-link" to="/range-calender">Range Calendar</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link">Table</a>
+              <Link to="/table" className="nav-link">Table</Link>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown Menu
-              </a>
+              </span>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item">Action</a>
-                <a className="dropdown-item">Another action</a>
+                <Link to="/no-match" className="dropdown-item">Action</Link>
+                <Link to="/no-match" className="dropdown-item">Another action</Link>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item">Something else here</a>
+                <Link to="/no-match" className="dropdown-item">Something else here</Link>
               </div>
             </li>
           </ul>

@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../../containers/home';
 import Calendar from '../../containers/calendar';
 import RangeCalendar from '../../containers/range-calendar';
+import Table from '../../containers/table';
 import FourZeroFour from '../../common/404';
 
 class Header extends Component {
@@ -15,6 +16,7 @@ class Header extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/calendar" component={Calendar} />
           <Route path="/range-calender" component={RangeCalendar} />
+          <Route path="/table" component={Table} />          
           <Route path="**" component={FourZeroFour} />
         </Switch>
       </>
