@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
 
 class RangeCalendar extends Component {
-  constructor() {
-    super()
-  }
-
-
-
   render() {
     return (
       <>
