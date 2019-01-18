@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const HeaderComponent = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">Report</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMobileToggle" aria-controls="navbarMobileToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
