@@ -51,7 +51,7 @@ class RangeCalendar extends Component {
       <div className="range-calendar-container">
         <h2>Range Calendar</h2>
         <br/>
-        <h3>Selected range: {this.state.startDate} - {this.state.endDate}</h3>
+        <h3>Selected range &nbsp; <span style={{color: 'red'}}>From:</span> {this.state.startDate} &nbsp; - &nbsp; <span style={{color: 'green'}}>To:</span> {this.state.endDate}</h3>
         <br/>
         {/* calendar empty div */}
         <div className="range-calendar-section" ref={el => this.rangeCal = el} />
