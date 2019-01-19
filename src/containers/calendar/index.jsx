@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import "./calendar.css";
 import CalendarComponent from "./component/calendar-component/calendar.component";
 import $ from "jquery";
-import "fullcalendar";
-import "fullcalendar-reactwrapper/dist/css/fullcalendar.min.css";
 import moment from "moment";
 import DropdownComponent from "./component/dropdown/dropdown-component";
 
@@ -23,6 +21,10 @@ class Calendar extends Component {
   componentDidMount = () => {
     this.loadCalendar();
   };
+
+  componentWillUnmount = () => {
+    this.state.calendarEvent.fullCalendar("destroy");
+  }
 
   handleSelect = (start, end, event, view) => {
     if (start.add(1, "days").date() !== end.date()) {
