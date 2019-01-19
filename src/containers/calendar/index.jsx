@@ -83,7 +83,8 @@ class Calendar extends Component {
 
   render() {
     return (
-      <>
+      <div className="calendar-container">
+        <h2>Calendar</h2>
         <DropdownComponent
           handlePastWeek={this.handlePastWeek}
           handlePastMonth={this.handlePastMonth}
@@ -95,7 +96,7 @@ class Calendar extends Component {
         </h3>
         <br />
         <CalendarComponent />
-      </>
+      </div>
     );
   }
 }
