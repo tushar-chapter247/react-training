@@ -1,8 +1,8 @@
 import React from 'react'
 import './header.component.css';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-const HeaderComponent = () => {
+const HeaderComponent = (props) => {
   return (
     <>
       <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
@@ -14,13 +14,13 @@ const HeaderComponent = () => {
         <div className="collapse navbar-collapse" id="navbarMobileToggle">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/calendar">Calendar</Link>
+              <Link className={props.location.pathname === '/calendar' ? "nav-link active" : "nav-link"} to="/calendar">Calendar</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/range-calender">Range Calendar</Link>
+              <Link className="nav-link" className={props.location.pathname === '/range-calender' ? "nav-link active" : "nav-link"} to="/range-calender">Range Calendar</Link>
             </li>
             <li className="nav-item">
-              <Link to="/table" className="nav-link">Table</Link>
+              <Link to="/table" className={props.location.pathname === '/table' ? "nav-link active" : "nav-link"}>Table</Link>
             </li>
             <li className="nav-item dropdown">
               <span className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,4 +40,4 @@ const HeaderComponent = () => {
   );
 };
 
-export default HeaderComponent;
+export default withRouter(HeaderComponent);
