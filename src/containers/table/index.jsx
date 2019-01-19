@@ -26,9 +26,17 @@ class Table extends Component {
       .then(res => {
         console.log("table data: ", res);
         if (res.status === 200) {
-          this.setState({
-            users: res.data.results,
-            bckUsersList: res.data.results
+          let temp = [];
+          res.data.results.forEach((k,i) => {
+            k.uname = k.name.first + ' ' + k.name.last;
+            k.userAge = k.dob.age;
+            temp.push(k);
+            if (res.data.results.length-1 === i) {
+              this.setState({
+                users: temp,
+                bckUsersList: temp
+              });
+            }
           });
         }
       })
@@ -39,17 +47,14 @@ class Table extends Component {
     let data = [...this.state.users];
     if (data && data.length) {
       let row = data[i];
-      if (row && row.name && row.location && row.dob) {
+      if (row && row.location) {
         row.number = i + 1;
-        row.userName =
-          row.name.title + " " + row.name.first + " " + row.name.last;
         row.userAddress =
           row.location.street +
           " " +
           row.location.city +
           " " +
           row.location.state;
-        row.userAge = row.dob.age;
       }
       return row;
     }

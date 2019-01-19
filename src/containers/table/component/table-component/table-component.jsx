@@ -4,7 +4,7 @@ import "./table-component.css";
 
 const columns = [
   { key: "number", name: "#", width: 50, sortable: true },
-  { key: "userName", name: "Name", width: 250, sortable: true },
+  { key: "uname", name: "Name", width: 250, sortable: true },
   { key: "email", name: "Email", width: 250, sortable: true },
   { key: "userAge", name: "Age", width: 80, sortable: true },
   { key: "gender", name: "Gender", width: 150 },
