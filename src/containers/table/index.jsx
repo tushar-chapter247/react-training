@@ -9,7 +9,7 @@ class Table extends Component {
 
     this.state = {
       users: [],
-      bckUsersList: [],
+      bckUsersList: []
     };
   }
 
@@ -39,9 +39,15 @@ class Table extends Component {
     if (data && data.length) {
       let row = data[i];
       if (row && row.name && row.location && row.dob) {
-        row.number = i+1;
-        row.userName = row.name.title + ' ' + row.name.first + ' ' + row.name.last;
-        row.userAddress = row.location.street + ' ' + row.location.city + ' ' + row.location.state;
+        row.number = i + 1;
+        row.userName =
+          row.name.title + " " + row.name.first + " " + row.name.last;
+        row.userAddress =
+          row.location.street +
+          " " +
+          row.location.city +
+          " " +
+          row.location.state;
         row.userAge = row.dob.age;
       }
       return row;
@@ -59,15 +65,14 @@ class Table extends Component {
       }
     };
     if (sortDirection === "NONE") {
-      this.setState({users: originalUsersList})
+      this.setState({ users: originalUsersList });
       return;
     } else {
       sortedUsersList.sort(comparer);
-      this.setState({users: sortedUsersList});
+      this.setState({ users: sortedUsersList });
       return;
     }
-    // return sortDirection === "NONE" ? initialRows : data.sort(comparer);
-  }
+  };
 
   render() {
     return (
