@@ -1,40 +1,39 @@
 import React from "react";
+import ReactDataGrid from "react-data-grid";
+import "./table-component.css";
 
-const TableView = () => {
-  return (
-    <>
-      <table className="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colSpan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-    </>
-  );
+const columns = [
+  { key: "number", name: "#", width: 50, sortable: true },
+  { key: "userName", name: "Name", width: 250, sortable: true },
+  { key: "email", name: "Email", width: 250, sortable: true },
+  { key: "userAge", name: "Age", width: 80, sortable: true },
+  { key: "gender", name: "Gender", width: 150 },
+  { key: "cell", name: "CellNumber", width: 200 },
+  { key: "phone", name: "Phone", width: 200 },
+  { key: "userAddress", name: "Address", width: 500 }
+];
+
+let rows = [];
+
+const TableView = props => {
+  rows = props.userData;
+  let ele = null;
+  if (rows && rows.length) {
+    ele = (
+      <ReactDataGrid
+        columns={columns}
+        rowGetter={props.rowGetter}
+        rowsCount={500}
+        minHeight={1000}
+        onGridSort={(sortColumn, sortDirection) =>
+          props.onGridSort(rows, sortColumn, sortDirection)
+        }
+      />
+    );
+  } else {
+    ele = <p>No data to show</p>;
+  }
+  return <div className="table-container-section">{ele}</div>;
 };
-
 
 export default TableView;
