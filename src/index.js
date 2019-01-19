@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/app/App.jsx';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
+import "fullcalendar";
+import "fullcalendar-reactwrapper/dist/css/fullcalendar.min.css";
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 
