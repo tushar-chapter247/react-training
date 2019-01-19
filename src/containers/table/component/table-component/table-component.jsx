@@ -16,19 +16,34 @@ const columns = [
 let rows = [];
 
 const TableView = props => {
+  const rowText = props.selectedIndexes.length === 0 ? "No row" : props.selectedIndexes.length === 1 ? "row" : "rows";
   rows = props.userData;
   let ele = null;
   if (rows && rows.length) {
     ele = (
-      <ReactDataGrid
-        columns={columns}
-        rowGetter={props.rowGetter}
-        rowsCount={500}
-        minHeight={1000}
-        onGridSort={(sortColumn, sortDirection) =>
-          props.onGridSort(rows, sortColumn, sortDirection)
-        }
-      />
+      <>
+        <span>
+          {props.selectedIndexes.length ? props.selectedIndexes.length : null} {rowText} selected
+        </span>
+        <ReactDataGrid
+          columns={columns}
+          rowGetter={props.rowGetter}
+          rowsCount={props.rowCount}
+          minHeight={1000}
+          onGridSort={(sortColumn, sortDirection) =>
+            props.onGridSort(rows, sortColumn, sortDirection)
+          }
+          rowSelection={{
+            showCheckbox: true,
+            enableShiftSelect: true,
+            onRowsSelected: props.onRowsSelected,
+            onRowsDeselected: props.onRowsDeselected,
+            selectBy: {
+              indexes: props.selectedIndexes
+            }
+          }}
+        />
+      </>
     );
   } else {
     ele = <p>No data to show</p>;

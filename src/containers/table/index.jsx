@@ -9,7 +9,8 @@ class Table extends Component {
 
     this.state = {
       users: [],
-      bckUsersList: []
+      bckUsersList: [],
+      selectedIndexes: []
     };
   }
 
@@ -74,6 +75,23 @@ class Table extends Component {
     }
   };
 
+  onRowsSelected = (rows) => {
+    this.setState({
+      selectedIndexes: this.state.selectedIndexes.concat(
+        rows.map(r => r.rowIdx)
+      )
+    });
+  };
+
+  onRowsDeselected = (rows) => {
+    let rowIndexes = rows.map(r => r.rowIdx);
+    this.setState({
+      selectedIndexes: this.state.selectedIndexes.filter(
+        i => rowIndexes.indexOf(i) === -1
+      )
+    });
+  };
+
   render() {
     return (
       <div className="table-container">
@@ -82,7 +100,11 @@ class Table extends Component {
         <TableView
           userData={this.state.users}
           rowGetter={this.rowGetter}
+          rowCount={this.state.users.length}
           onGridSort={this.onGridSort}
+          onRowsSelected={this.onRowsSelected}
+          onRowsDeselected={this.onRowsDeselected}
+          selectedIndexes={this.state.selectedIndexes}
         />
       </div>
     );
