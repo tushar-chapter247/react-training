@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
 const EmployeeList = (props) => {
+  console.log('Employee List props: ', props);
   return (
     <>
       {props.course ? (
@@ -25,12 +26,7 @@ const EmployeeList = (props) => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button
-              size="small"
-              color="primary"
-              href={props.course.fields.url}
-              target="_blank"
-            >
+            <Button size="small" color="primary" href={props.course.fields.url} target="_blank">
               Go To Course
             </Button>
           </CardActions>
