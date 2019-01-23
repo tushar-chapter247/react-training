@@ -5,6 +5,7 @@ import IconButton from "@material-ui/core/IconButton";
 import PersonIcon from "@material-ui/icons/Person";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
 
 const NavBar = props => {
@@ -18,14 +19,16 @@ const NavBar = props => {
             React Redux
           </Typography>
           <span className="flex-spacer" />
-          <IconButton
-            aria-owns={profileMenu ? "profile-menu" : undefined}
-            aria-haspopup="true"
-            color="inherit"
-            onClick={props.openProfileMenu}
-          >
-            <PersonIcon />
-          </IconButton>
+          <Tooltip title="User Menu" placement="bottom">
+            <IconButton
+              aria-owns={profileMenu ? "profile-menu" : undefined}
+              aria-haspopup="true"
+              color="inherit"
+              onClick={props.openProfileMenu}
+            >
+              <PersonIcon />
+            </IconButton>
+          </Tooltip>
           <Menu
             id="profile-menu"
             anchorEl={props.anchorEl}
