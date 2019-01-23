@@ -2,7 +2,7 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import PersonIcon from "@material-ui/icons/Person";
+import PersonPinIcon from "@material-ui/icons/PersonPin";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -26,12 +26,13 @@ const NavBar = props => {
               color="inherit"
               onClick={props.openProfileMenu}
             >
-              <PersonIcon />
+              <PersonPinIcon />
             </IconButton>
           </Tooltip>
           <Menu
             id="profile-menu"
             anchorEl={props.anchorEl}
+            placement="top"
             anchorOrigin={{
               vertical: "top",
               horizontal: "right"
